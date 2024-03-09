@@ -1,16 +1,17 @@
-package com.example.products_app
+package com.example.products_app.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.products_app.databinding.FragmentSecondBinding
+import com.example.products_app.databinding.FragmentFirstBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class SecondFragment : Fragment() {
+@AndroidEntryPoint
+class FirstFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
-
+    private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,13 +19,14 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
     }
 
     override fun onDestroyView() {
