@@ -17,7 +17,14 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.products_app.ui.SecondFragment"
+        android:name="com.example.products_app.ui.ProductDetailsFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second"/>
+        tools:layout="@layout/fragment_product_details">
+        <argument
+            android:name="product"
+            app:argType="com.example.products_app.data.model.Product" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>
