@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.products_app.data.model.Product
@@ -77,7 +78,8 @@ class ProductsListFragment : Fragment() {
     }
 
     private fun onProductClick(product: Product) {
-
+        val action = ProductsListFragmentDirections.actionProductsListFragmentToSecondFragment(product, product.title)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
