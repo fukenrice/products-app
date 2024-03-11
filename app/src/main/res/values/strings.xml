@@ -9,4 +9,6 @@
     <string name="in_stock">In stock: %1$s</string>
     <string name="brand">Brand: %1$s</string>
 <!--    <string name="price">%1$s $</string>-->
-    <string name="price">%1$s $</string></resources>
+    <string name="price">%1$s $</string>
+    <string name="search">Search…</string>
+</resources>

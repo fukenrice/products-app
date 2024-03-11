@@ -4,9 +4,13 @@ import android.graphics.Paint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.MenuProvider
 import androidx.navigation.fragment.navArgs
 import com.example.products_app.R
 import com.example.products_app.databinding.FragmentProductDetailsBinding
@@ -14,7 +18,7 @@ import com.example.products_app.ui.adapters.ImagesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProductDetailsFragment : Fragment() {
+class ProductDetailsFragment : Fragment(), MenuProvider {
 
     private var _binding: FragmentProductDetailsBinding? = null
 
@@ -34,6 +38,7 @@ class ProductDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().addMenuProvider(this)
         setupView()
     }
 
@@ -57,4 +62,16 @@ class ProductDetailsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun onPrepareMenu(menu: Menu) {
+        super.onPrepareMenu(menu)
+        val searchItem = menu.findItem(R.id.app_bar_search)
+        searchItem.isVisible = false
+    }
+
+    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+
+    }
+
+    override fun onMenuItemSelected(menuItem: MenuItem): Boolean = false
 }

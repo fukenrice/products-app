@@ -10,6 +10,7 @@ import com.example.products_app.data.paging.ProductsPagingSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
+// Можно создать мок апи и написать Unit и UI тесты, но уже поздний вечер.
 class RemoteProductsRepository @Inject constructor(private val api: ProductsApi) :
     ProductsRepository {
     override fun getProducts(): Flow<PagingData<Product>> = Pager(
