@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.Productsapp" parent="Base.Theme.Productsapp" />
+    <style name="RoundImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
+    </style>
 </resources>

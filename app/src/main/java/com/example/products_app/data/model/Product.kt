@@ -17,3 +17,5 @@ data class Product(
     val thumbnail: String,
     val images: List<String>
 ) : Parcelable
+
+data class Products(val products: List<Product>)
